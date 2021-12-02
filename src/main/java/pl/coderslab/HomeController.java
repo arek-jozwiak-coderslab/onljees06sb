@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 
+
+    @GetMapping("/home")
+    public String homeTemplate() {
+        return "template";
+    }
+
+
     @RequestMapping("/")
 
     public String home(Model model) {
@@ -16,7 +23,10 @@ public class HomeController {
         model.addAttribute("mmm", "Dupa zbita");
         return "start";
     }
+
     @GetMapping("/about")
     @ResponseBody
-    public String about() { return "Here you can find some details for logged users"; }
+    public String about() {
+        return "Here you can find some details for logged users";
+    }
 }
